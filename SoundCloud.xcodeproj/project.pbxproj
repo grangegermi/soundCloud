@@ -17,6 +17,9 @@
 		DB5CA45C28EACCEF006931D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5CA45B28EACCEF006931D6 /* HomeViewController.swift */; };
 		DB5CA45E28EACD0E006931D6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5CA45D28EACD0E006931D6 /* SearchViewController.swift */; };
 		DB5CA46028EACD1F006931D6 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5CA45F28EACD1E006931D6 /* LibraryViewController.swift */; };
+		DB7B72E7291EDB5900192F1F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7B72E6291EDB5900192F1F /* CollectionViewCell.swift */; };
+		DBAB6F0F2922354B00C44535 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB6F0E2922354B00C44535 /* Model.swift */; };
+		DBAB6F1129224CB600C44535 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAB6F1029224CB600C44535 /* ModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		DB5CA45B28EACCEF006931D6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DB5CA45D28EACD0E006931D6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DB5CA45F28EACD1E006931D6 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		DB7B72E6291EDB5900192F1F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		DBAB6F0E2922354B00C44535 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DBAB6F1029224CB600C44535 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,9 @@
 				DB5CA44928EAB696006931D6 /* SceneDelegate.swift */,
 				DB5CA44B28EAB696006931D6 /* MainTabBarController.swift */,
 				DB5CA45B28EACCEF006931D6 /* HomeViewController.swift */,
+				DBAB6F1029224CB600C44535 /* ModelController.swift */,
+				DBAB6F0E2922354B00C44535 /* Model.swift */,
+				DB7B72E6291EDB5900192F1F /* CollectionViewCell.swift */,
 				DB5CA45D28EACD0E006931D6 /* SearchViewController.swift */,
 				DB5CA45F28EACD1E006931D6 /* LibraryViewController.swift */,
 				DB5CA44D28EAB696006931D6 /* Main.storyboard */,
@@ -236,9 +245,12 @@
 				DB5CA45E28EACD0E006931D6 /* SearchViewController.swift in Sources */,
 				DB5CA44C28EAB696006931D6 /* MainTabBarController.swift in Sources */,
 				DB5CA44828EAB696006931D6 /* AppDelegate.swift in Sources */,
+				DBAB6F1129224CB600C44535 /* ModelController.swift in Sources */,
+				DB7B72E7291EDB5900192F1F /* CollectionViewCell.swift in Sources */,
 				DB5CA44A28EAB696006931D6 /* SceneDelegate.swift in Sources */,
 				DB5CA46028EACD1F006931D6 /* LibraryViewController.swift in Sources */,
 				DB5CA45C28EACCEF006931D6 /* HomeViewController.swift in Sources */,
+				DBAB6F0F2922354B00C44535 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
