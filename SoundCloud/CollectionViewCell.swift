@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SnapKit
 
 class CollectionViewCell: UICollectionViewCell {
     
@@ -18,34 +18,11 @@ class CollectionViewCell: UICollectionViewCell {
     override init(frame:CGRect){
         super.init(frame:frame)
     
-  
+        self.layer.cornerRadius = 40
         contentView.addSubview(imageView)
         contentView.addSubview(label)
         createLayout()
-    
-   
-//        imageView.contentMode = .scaleAspectFit
-     
-      
-        
-////        let images:[UIImage] = [ UIImage(named:"1"),
-////                                 UIImage(named: "2"),
-////                                 UIImage(named: "3"),
-////                                 UIImage(named: "4"),
-////                                 UIImage(named: "5"),
-////                                 UIImage(named: "6"),
-////                                 UIImage(named: "7"),
-////                                 UIImage(named: "8"),
-////                                 UIImage(named: "9"), ].compactMap({$0})
-//        
-//        
-//        
-//        let texts:[String] = ["1","2","3","4","5","6","7","8","9"]
-//        
-//        imageView.image = images.randomElement()
-//        imageView.contentMode = .scaleAspectFill
-//        label.text = texts.randomElement()
-                                
+
     }
     
     required init?(coder: NSCoder) {
@@ -71,10 +48,11 @@ class CollectionViewCell: UICollectionViewCell {
         }
     }
 //    
-    func configure(image:UIImage,text:String) {
-        
-        label.text = text
-        imageView.image = image
-    }
+//    func configure(item:StorysItem) {
+//        
+//        imageView.image = UIImage(named: item.image)
+//        label.text = item.title
+//        
+//    }
     
 }

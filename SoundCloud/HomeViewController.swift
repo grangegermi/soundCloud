@@ -9,31 +9,21 @@ import SnapKit
 
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
-    var model = ModelViewController()
+    
+    
+    let model = MockData.shared.allSection
     
     var collectionView: UICollectionView!
-//    var images = UIImageView()
-//    var dataSource: UICollectionViewDiffableDataSource<Section,Storys>!
-
-//    var story:[UIImage] = [ UIImage(named: "1")!,
-//                             UIImage(named: "2")!,
-//                             UIImage(named: "3")!,
-//                             UIImage(named: "4")!,
-//                             UIImage(named: "5")!,
-//                             UIImage(named: "6")!,
-//                             UIImage(named: "7")!,
-//                             UIImage(named: "8")!,
-//                             UIImage(named: "9")!]
-//    var text:[String] = ["1","2","3","4","5","6","7","8","9",]
- 
+    //    var images = UIImageView()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: createCollectionViewLayout())
-
         collectionView.register(CollectionViewCell.self,forCellWithReuseIdentifier: CollectionViewCell.id)
-        
+        collectionView.register(CellForUpload.self,forCellWithReuseIdentifier:CellForUpload.id)
         
         view.addSubview(collectionView)
         
@@ -47,105 +37,117 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView.dataSource = self
         collectionView.delegate = self
         
-                
-//        createDataSource()
-   
-     
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        loadData()
     }
     
+    //    func loadData(){
+    //
+    //        var snapShot = NSDiffableDataSourceSnapshot<Sections,StorysItem>()
+    //        snapShot.appendSections([.storys])
+    //        snapShot.appendItems(model.story, toSection: .storys)
+    //        dataSource.applySnapshotUsingReloadData(snapShot)
+    //    }
+    //
+    //    func createDataSource() {
+    //
+    ////        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, Cat> {
+    ////
+    ////            cell,indexPath,itemIdetifier in
+    ////            var contenConfiguration = UIListContentConfiguration.cell()
+    ////            contenConfiguration.text = itemIdetifier.name
+    ////           var dateFormatter = DateFormatter()
+    ////            dateFormatter.dateStyle = .short
+    ////            dateFormatter.timeStyle = .short
+    ////            contenConfiguration.secondaryText = dateFormatter.string(from: itemIdetifier.dateBirthday)
+    ////            cell.contentConfiguration = contenConfiguration
+    ////
+    ////        }
+    //        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView) {collectionView,indexPath,itemIdentifier in
+    //        dataSource = UICollectionViewDiffableDataSource<Sections,StorysItem>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, intValue) -> UICollectionViewCell? in
+    //
+    //            let section = Sections.Type
+    //
+    //            switch section {
+    //            case .storys.hashValue:
+    //                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.id, for: indexPath) as! CollectionViewCell
+    //                return cell
+    //            case .upload.hashValue:
+    //                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellForUpload.id, for: indexPath) as!  CellForUpload
+    //            }
+    //        }
     
-//    func loadData(){
-//
-//        var snapShot = NSDiffableDataSourceSnapshot<Section,Storys>()
-//
-//        snapShot.appendSections([.sectionStorys])
-//        snapShot.appendItems(story, toSection: .sectionStorys)
-//        dataSource.applySnapshotUsingReloadData(snapShot)
-//    }
-    
-//    func createDataSource() {
-//
-//        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Storys> {
-//
-//            cell,indexPath,itemIdetifier in
-//
-//            var contenConfiguration = cell.defaultContentConfiguration()
-//
-//            contenConfiguration.text = itemIdetifier.label
-//
-//
-//            contenConfiguration.image = itemIdetifier.imageName
-//
-//            contenConfiguration.imageProperties.cornerRadius = 60
-//
-//            contenConfiguration.textProperties.numberOfLines = 0
-//            contenConfiguration.imageToTextPadding = 30
-//            contenConfiguration.textProperties.alignment = .center
-//
-//
-//
-//
-//            cell.contentConfiguration = contenConfiguration
-//
-//        }
-//
-//        dataSource = UICollectionViewDiffableDataSource<Section,Storys>(collectionView: collectionView) {
-//            collectionView, indexPath, itemIdetifier in
-//
-//            let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdetifier)
-//
-//            return cell
-//        }
-      
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.id, for: indexPath) as! CollectionViewCell
-        var contenConfiguration = UIListContentConfiguration.cell()
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         
-//        cell.imageView.image = story[indexPath.row]
-//
-        
-            
-        contenConfiguration.image = UIImage(named: model.storys[indexPath.row])
-         
-            contenConfiguration.imageProperties.cornerRadius = 40
-        
-//        contenConfiguration.text = text[indexPath.row]
-//        cell.label.text = contenConfiguration.text
-       
-        cell.contentConfiguration = contenConfiguration
-        
-        return cell
-        
+          return model.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.storys.count
+        
+             return model[section].count
     }
     
-    func createCollectionViewLayout() -> UICollectionViewCompositionalLayout {
-
-        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .fractionalHeight(1)))
-
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-                                              
-        let groupItem = NSCollectionLayoutGroup.horizontal(layoutSize:NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(0.1)),subitems: [item])
-    
-//        groupItem.interItemSpacing = .flexible(2)
-                                              
-            let section = NSCollectionLayoutSection(group: groupItem )
-                section.orthogonalScrollingBehavior = .continuous
-
+        switch model[indexPath.section]{
             
+        case .storys(let story):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.id, for: indexPath) as! CollectionViewCell
+            cell.imageView.image = UIImage(named: story[indexPath.row].image)
+            cell.imageView.layer.cornerRadius = 40
+            cell.label.text = story[indexPath.row].title
             
-
-            return UICollectionViewCompositionalLayout(section: section)
+            return cell
+            
+        case .upload(let upload):
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellForUpload.id, for: indexPath) as!
+            CellForUpload
+            
+            cell.imageView.image = UIImage(named: upload[indexPath.row].title)
+            cell.labelFirst.text = "THe Upload"
+            cell.labelSecond.text = "THe"
+            
+            return cell
         }
-
+    }
+    
+    
+    
+    func createCollectionViewLayout() -> UICollectionViewCompositionalLayout { UICollectionViewCompositionalLayout {
+        [weak self] sectionIndex, _  in
+        
+        guard let self = self else{return}
+        
+        let section = self.model[sectionIndex]
+        
+        switch section {
+        case .storys(_):
+            
+            let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.2), heightDimension: .fractionalHeight(1)))
+            
+            let groupItem = NSCollectionLayoutGroup.horizontal(layoutSize:NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(0.1)),subitems: [item])
+            groupItem.interItemSpacing = .flexible(10)
+            
+            let section = NSCollectionLayoutSection(group: groupItem )
+            section.orthogonalScrollingBehavior = .continuous
+            
+            return section
+            
+        case .upload(_):
+            
+            let item = NSCollectionLayoutItem(layoutSize: (NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(1))))
+            
+            let groupItem = NSCollectionLayoutGroup.horizontal(layoutSize:NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(0.5)),subitems: [item])
+            
+            let section = NSCollectionLayoutSection(group: groupItem)
+            
+            return section
+        }
+        
+    }
+    }
 }

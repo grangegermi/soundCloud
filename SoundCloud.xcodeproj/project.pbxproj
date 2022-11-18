@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2121772760F9AA835A7CD660 /* Pods_SoundCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094D9655F47F123456004515 /* Pods_SoundCloud.framework */; };
+		DB1B6BDB292646A300AE5B36 /* CellForUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1B6BDA292646A300AE5B36 /* CellForUpload.swift */; };
 		DB5CA44828EAB696006931D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5CA44728EAB696006931D6 /* AppDelegate.swift */; };
 		DB5CA44A28EAB696006931D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5CA44928EAB696006931D6 /* SceneDelegate.swift */; };
 		DB5CA44C28EAB696006931D6 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5CA44B28EAB696006931D6 /* MainTabBarController.swift */; };
@@ -26,6 +27,7 @@
 		094D9655F47F123456004515 /* Pods_SoundCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E1BB3D5D138322C583D60C /* Pods-SoundCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCloud.release.xcconfig"; path = "Target Support Files/Pods-SoundCloud/Pods-SoundCloud.release.xcconfig"; sourceTree = "<group>"; };
 		C2952D0F8343D66F48A8B10B /* Pods-SoundCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundCloud.debug.xcconfig"; path = "Target Support Files/Pods-SoundCloud/Pods-SoundCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		DB1B6BDA292646A300AE5B36 /* CellForUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellForUpload.swift; sourceTree = "<group>"; };
 		DB5CA44428EAB696006931D6 /* SoundCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5CA44728EAB696006931D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB5CA44928EAB696006931D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				DB5CA44928EAB696006931D6 /* SceneDelegate.swift */,
 				DB5CA44B28EAB696006931D6 /* MainTabBarController.swift */,
 				DB5CA45B28EACCEF006931D6 /* HomeViewController.swift */,
+				DB1B6BDA292646A300AE5B36 /* CellForUpload.swift */,
 				DBAB6F1029224CB600C44535 /* ModelController.swift */,
 				DBAB6F0E2922354B00C44535 /* Model.swift */,
 				DB7B72E6291EDB5900192F1F /* CollectionViewCell.swift */,
@@ -233,7 +236,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/upload-symbols\" -gsp \"${PROJECT_DIR}/#####/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -244,6 +247,7 @@
 			files = (
 				DB5CA45E28EACD0E006931D6 /* SearchViewController.swift in Sources */,
 				DB5CA44C28EAB696006931D6 /* MainTabBarController.swift in Sources */,
+				DB1B6BDB292646A300AE5B36 /* CellForUpload.swift in Sources */,
 				DB5CA44828EAB696006931D6 /* AppDelegate.swift in Sources */,
 				DBAB6F1129224CB600C44535 /* ModelController.swift in Sources */,
 				DB7B72E7291EDB5900192F1F /* CollectionViewCell.swift in Sources */,

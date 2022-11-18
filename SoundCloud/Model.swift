@@ -8,19 +8,41 @@
 import Foundation
 
 
-//enum Section {
-//    case sectionStorys([Storys])
-//    case TheUpload
-//}
-
-struct Storys {
+enum Sections {
     
-    let title:String
-    let image:String
+    case storys([Item])
+    case upload([Item])
     
-    init(title:String,image:String) {
-        self.title = title
-        self.image = image
+    var items:[Item] {
+        switch self {
+        case  .storys(let items):
+            return items
+        case  .upload(let items):
+            return items
+            
+        }
     }
-
+    
+    var count:Int {
+        
+        return items.count
+    }
+    
+    var title:String {
+        switch self {
+        case .storys(_):
+            return "Story"
+        case .upload(_):
+            return "The Upload"
+        }
+    }
 }
+
+
+struct Item {
+    
+    var image:String
+    var title:String
+}
+
+
